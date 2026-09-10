@@ -1,6 +1,5 @@
-
 import { FaCheck, FaPlus } from "react-icons/fa";
-import type { Technology } from "../../types/technology";
+import type { Technology } from "../../type/technology";
 
 interface TechnologyCardProps {
   technology: Technology;
@@ -15,11 +14,9 @@ const TechnologyCard = ({
 }: TechnologyCardProps) => {
   return (
     <div className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl">
-
       {/* Top Section */}
 
       <div className="flex items-start justify-between gap-4">
-
         {/* Icon */}
 
         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-slate-50 p-3 transition-all duration-300 group-hover:bg-slate-100">
@@ -40,9 +37,7 @@ const TechnologyCard = ({
       {/* Information */}
 
       <div className="mt-5 flex-1">
-        <h3 className="text-lg font-bold text-slate-900">
-          {technology.name}
-        </h3>
+        <h3 className="text-lg font-bold text-slate-900">{technology.name}</h3>
 
         <p className="mt-1 text-sm font-medium text-slate-500">
           {technology.category}
@@ -54,7 +49,7 @@ const TechnologyCard = ({
       </div>
 
       {/* Add Button */}
-      
+
       <button
         type="button"
         disabled={isSelected}

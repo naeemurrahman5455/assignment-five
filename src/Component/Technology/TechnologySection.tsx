@@ -1,9 +1,5 @@
-
-
-
-
 import { Suspense, use, useState } from "react";
-import type { Technology } from "../types/technology";
+import type { Technology } from "../type/technology";
 
 import { getTechnologies } from "../services/technologyService";
 import ExploreTechnologies from "./ExploreTechnologies/ExploreTechnologies";
@@ -33,15 +29,14 @@ const Loading = () => {
 const TechnologyData = () => {
   const technologies = use(technologiesPromise);
 
-  const [selectedTechnologies, setSelectedTechnologies] =
-    useState<Technology[]>([]);
+  const [selectedTechnologies, setSelectedTechnologies] = useState<
+    Technology[]
+  >([]);
 
   // Add Technology
   const handleAddToStack = (technology: Technology) => {
     setSelectedTechnologies((previous) => {
-      const alreadyExists = previous.some(
-        (item) => item.id === technology.id
-      );
+      const alreadyExists = previous.some((item) => item.id === technology.id);
 
       if (alreadyExists) {
         toast.warning(`${technology.name} is already in your stack!`);
@@ -57,17 +52,13 @@ const TechnologyData = () => {
   // Remove Technology
   const handleRemoveFromStack = (technologyId: string) => {
     setSelectedTechnologies((previous) => {
-      const technology = previous.find(
-        (item) => item.id === technologyId
-      );
+      const technology = previous.find((item) => item.id === technologyId);
 
       if (technology) {
         toast.info(`${technology.name} removed from your stack!`);
       }
 
-      return previous.filter(
-        (item) => item.id !== technologyId
-      );
+      return previous.filter((item) => item.id !== technologyId);
     });
   };
 
@@ -83,43 +74,35 @@ const TechnologyData = () => {
   };
 
   return (
+    <div className="grid gap-8 lg:grid-cols-[1fr_320px] lg:items-start">
+      {/* Explore Technologies */}
+      <ExploreTechnologies
+        technologies={technologies}
+        selectedTechnologies={selectedTechnologies}
+        onAddToStack={handleAddToStack}
+      />
 
-
-<div className="grid gap-8 lg:grid-cols-[1fr_320px] lg:items-start">
-    {/* Explore Technologies */}
-    <ExploreTechnologies
-      technologies={technologies}
-      selectedTechnologies={selectedTechnologies}
-      onAddToStack={handleAddToStack}
-    />
-
-    {/* Your Stack */}
-    <YourStack
-      selectedTechnologies={selectedTechnologies}
-      onRemoveFromStack={handleRemoveFromStack}
-      onRemoveAll={handleRemoveAll}
-    />
-  </div>
-
-
-
+      {/* Your Stack */}
+      <YourStack
+        selectedTechnologies={selectedTechnologies}
+        onRemoveFromStack={handleRemoveFromStack}
+        onRemoveAll={handleRemoveAll}
+      />
+    </div>
   );
 };
 
 const TechnologySection = () => {
   return (
-
     <section className="bg-slate-50 py-16 sm:py-20 lg:py-24">
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Suspense fallback={<Loading />}>
+          <TechnologyData />
+        </Suspense>
+      </div>
 
-<Suspense fallback={<Loading />}>
-  <TechnologyData />
-</Suspense>
-
-    </div>
-
-    <ToastContainer position="top-right" />
-  </section>
+      <ToastContainer position="top-right" />
+    </section>
   );
 };
 

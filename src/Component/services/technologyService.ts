@@ -1,4 +1,4 @@
-import type { Technology } from "../types/technology";
+import type { Technology } from "../type/technology";
 
 export const getTechnologies = async (): Promise<Technology[]> => {
   const response = await fetch("/technologydata.json");

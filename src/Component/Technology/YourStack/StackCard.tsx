@@ -1,25 +1,17 @@
-
-
-
 import { FaTrash } from "react-icons/fa";
-import type { Technology } from "../../types/technology";
+import type { Technology } from "../../type/technology";
 
 interface StackCardProps {
   technology: Technology;
   onRemoveFromStack: (technologyId: string) => void;
 }
 
-const StackCard = ({
-  technology,
-  onRemoveFromStack,
-}: StackCardProps) => {
+const StackCard = ({ technology, onRemoveFromStack }: StackCardProps) => {
   return (
     <div className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg">
-
       {/* Top Section */}
 
       <div className="flex items-start justify-between gap-4">
-        
         {/* Technology Icon */}
 
         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-slate-50 p-3 transition-colors duration-300 group-hover:bg-slate-100">

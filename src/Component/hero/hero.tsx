@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:gap-12 md:py-16 lg:px-8 lg:py-20">
+      <div className="mx-auto grid min-h-[calc(20vh-50px)] max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:gap-12 md:py-16 lg:px-8 lg:py-20">
         
         {/* Left Content */}
         <div className="text-center md:text-left">

@@ -1,8 +1,4 @@
-
-
-
-
-import type { Technology } from "../../types/technology";
+import type { Technology } from "../../type/technology";
 
 import StackHeader from "./StackHeader";
 import StackList from "./StackList";
@@ -20,11 +16,9 @@ const YourStack = ({
   onRemoveAll,
 }: YourStackProps) => {
   return (
-    <div className="flex max-h-[calc(100vh-48px)] flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-6">
+    <div className="flex max-h-[calc(100vh-48px)] flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm mt-25 lg:top-6">
       {/* Header */}
-      <StackHeader
-        selectedTechnologies={selectedTechnologies}
-      />
+      <StackHeader selectedTechnologies={selectedTechnologies} />
 
       {/* Stack Content */}
       <div className="min-h-0 flex-1">

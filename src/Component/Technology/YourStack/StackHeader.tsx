@@ -1,15 +1,10 @@
-
-
-
-import type { Technology } from "../../types/technology";
+import type { Technology } from "../../type/technology";
 
 interface StackHeaderProps {
   selectedTechnologies: Technology[];
 }
 
-const StackHeader = ({
-  selectedTechnologies,
-}: StackHeaderProps) => {
+const StackHeader = ({ selectedTechnologies }: StackHeaderProps) => {
   const selectedCount = selectedTechnologies.length;
 
   return (
@@ -19,8 +14,8 @@ const StackHeader = ({
       </h2>
 
       <p className="mt-1 text-sm text-slate-500">
-        {selectedCount}{" "}
-        {selectedCount === 1 ? "Technology" : "Technologies"} Selected
+        {selectedCount} {selectedCount === 1 ? "Technology" : "Technologies"}{" "}
+        Selected
       </p>
     </div>
   );

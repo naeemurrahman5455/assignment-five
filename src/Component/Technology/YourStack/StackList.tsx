@@ -1,7 +1,5 @@
-
-
 import { FaTrash } from "react-icons/fa";
-import type { Technology } from "../../types/technology";
+import type { Technology } from "../../type/technology";
 
 interface StackListProps {
   selectedTechnologies: Technology[];
