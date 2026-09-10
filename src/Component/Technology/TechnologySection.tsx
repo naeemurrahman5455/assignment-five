@@ -14,6 +14,22 @@ import "react-toastify/dist/ReactToastify.css";
 
 const technologiesPromise = getTechnologies();
 
+const Loading = () => {
+  return (
+    <div className="flex min-h-60 items-center justify-center">
+      <div className="flex flex-col items-center gap-4">
+        {/* Spinner */}
+        <div className="h-10 w-10 animate-spin rounded-full border-4 border-slate-200 border-t-slate-900" />
+
+        {/* Loading Text */}
+        <p className="text-sm font-medium text-slate-500">
+          Loading technologies...
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const TechnologyData = () => {
   const technologies = use(technologiesPromise);
 
@@ -95,17 +111,11 @@ const TechnologySection = () => {
 
     <section className="bg-slate-50 py-16 sm:py-20 lg:py-24">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <Suspense
-        fallback={
-          <div className="py-20 text-center">
-            <p className="text-sm text-slate-500">
-              Loading technologies...
-            </p>
-          </div>
-        }
-      >
-        <TechnologyData />
-      </Suspense>
+
+<Suspense fallback={<Loading />}>
+  <TechnologyData />
+</Suspense>
+
     </div>
 
     <ToastContainer position="top-right" />
