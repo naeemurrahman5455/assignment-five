@@ -29,6 +29,7 @@ Easily remove technologies from your selected stack and keep your development to
 
 ## 📂 Project Structure
 
+```text
 components/
 ├── Navbar/
 │   └── Navbar.tsx
