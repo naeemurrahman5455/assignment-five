@@ -50,7 +50,9 @@ components/
 │   └── EmptyStack.tsx
 │
 └── Footer/
-    └── Footer.tsx ```
+    └── Footer.tsx  
+    
+```
 
 
 ## ❓ React Questions & Answers
