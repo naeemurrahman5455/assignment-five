@@ -46,7 +46,7 @@ const Hero = () => {
         {/* Right Image */}
         <div className="flex items-center justify-center">
           <img
-            src={"/src/assets/banner-stack.png"}
+            src="../../assets/banner-stack.png"
             alt="Development stack illustration"
             className="h-auto w-full max-w-md object-contain lg:max-w-lg"
           />
