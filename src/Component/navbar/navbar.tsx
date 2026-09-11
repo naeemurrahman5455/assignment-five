@@ -1,41 +1,34 @@
-
 import { useState } from "react";
+import logoText from "../../assets/logo-text.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = [
-    "Home",
-    "Technologies",
-    "Projects",
-    "About",
-    "Contact",
-  ];
+  const menuItems = ["Home", "Technologies", "Projects", "About", "Contact"];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
-
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
         <div className="flex h-16 items-center justify-between">
           {/* Mobile Hamburger */}
           <button
             type="button"
             className="flex h-10 w-10 items-center justify-center rounded-md text-gray-700 hover:bg-gray-100 md:hidden"
           >
-          <span className="text-2xl">☰</span>
-            
+            <span className="text-2xl">☰</span>
           </button>
 
           {/* Left Side Logo  */}
 
-        <img className="text-xl font-bold text-gray-900 md:mr-auto" src={"/src/assets/logo-text.png"} alt="" />
-
+          <img
+            className="text-xl font-bold text-gray-900 md:mr-auto"
+            src={logoText}
+            alt="Dev Stack Logo"
+          />
 
           {/* Desktop Menu  */}
 
-
-           <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-8 md:flex">
             {menuItems.map((item) => (
               <a
                 key={item}
@@ -45,12 +38,11 @@ const Navbar = () => {
                 {item}
               </a>
             ))}
-          </div>  
+          </div>
 
           {/* Right Side Two Buttons */}
 
           <div className="ml-auto flex items-center gap-2 md:ml-auto">
-
             <button
               type="button"
               className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:text-blue-600"
