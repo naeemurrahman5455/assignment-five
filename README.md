@@ -1,32 +1,90 @@
-# React + TypeScript + Vite
+## 🚀 Project Name:  DevStack Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+DevStack Builder is a modern and interactive web application that helps developers explore different technologies and build their own personalized development stack. Users can browse technologies, view details, and add or remove technologies from their stack.
 
-Currently, two official plugins are available:
+## 🛠️ Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- React Icons
+- JavaScript / ES6+
+- Git & GitHub
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 1. 🔍 Explore Technologies
 
-## Expanding the Oxlint configuration
+Browse and explore different development technologies through a clean and modern card-based interface.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 2. 🧩 Build Your Own Stack
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+Add your favorite technologies to Your Stack and create a personalized development stack.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 3. 🗑️ Manage Your Stack
+
+Easily remove technologies from your selected stack and keep your development toolkit organized.
+
+
+## 📂 Project Structure
+
+components/
+├── Navbar/
+│   └── Navbar.tsx
+│
+├── Hero/
+│   └── Hero.tsx
+│
+├── Technology/
+│   ├── TechnologySection.tsx
+│   ├── TechnologyGrid.tsx
+│   └── TechnologyCard.tsx
+│
+├── Stack/
+│   ├── StackSection.tsx
+│   ├── StackHeader.tsx
+│   ├── StackList.tsx
+│   ├── StackCard.tsx
+│   └── EmptyStack.tsx
+│
+└── Footer/
+    └── Footer.tsx
+
+
+## ❓ React Questions & Answers
+
+### 1. What is JSX, and why is it used in React?
+
+JSX is a syntax that lets us write HTML-like code inside JavaScript.  
+It makes React code easier to read and helps us create UI components.
+
+### 2. What is the difference between props and state?
+
+**Props** are used to pass data from a parent component to a child component.  
+**State** is used to store and manage data inside a component.
+
+### 3. What does the `useState` hook do, and where did you use it in this project?
+
+`useState` is used to create and update state in a React component.  
+I used it to manage the selected technologies and update the **Your Stack** section.
+
+### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
+
+`useEffect` is used to run some code after a component renders.  
+I used it to load the technology data from the JSON file when the component starts.
+
+### 5. Why does every item in a `.map()` list need a unique `key` prop?
+
+React uses the `key` to identify each item in a list.  
+A unique key helps React update the list correctly and efficiently.
+
+### 6. What is conditional rendering? Show one place you used it.
+
+Conditional rendering means showing different UI based on a condition.  
+I used it in the **Your Stack** section to show the empty stack message when no technology is selected.
+
+## 👨‍💻 Author
+
+Naeemur Rahman
+GitHub: @naeemurrahman5455
