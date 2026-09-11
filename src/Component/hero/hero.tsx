@@ -1,8 +1,9 @@
+import bannerStack from "../../assets/banner-stack.png";
+
 const Hero = () => {
   return (
     <section className="w-full bg-white">
       <div className="mx-auto grid min-h-[calc(100vh-50px)] max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:gap-12 md:py-16 lg:px-8 lg:py-20">
-        
         {/* Left Content */}
         <div className="text-center md:text-left">
           {/* Heading */}
@@ -23,7 +24,6 @@ const Hero = () => {
 
           {/* Buttons */}
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
-            
             {/* Explore Technologies Button */}
             <button
               type="button"
@@ -39,19 +39,25 @@ const Hero = () => {
             >
               Build Your Stack
             </button>
-
           </div>
         </div>
 
         {/* Right Image */}
-        <div className="flex items-center justify-center">
+        {/* <div className="flex items-center justify-center">
           <img
             src="../../assets/banner-stack.png"
             alt="Development stack illustration"
             className="h-auto w-full max-w-md object-contain lg:max-w-lg"
           />
-        </div>
+        </div> */}
 
+        <div className="flex items-center justify-center">
+          <img
+            src={bannerStack}
+            alt="Development stack illustration"
+            className="h-auto w-full max-w-md object-contain lg:max-w-lg"
+          />
+        </div>
       </div>
     </section>
   );
